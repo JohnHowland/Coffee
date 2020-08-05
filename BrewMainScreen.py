@@ -9,6 +9,7 @@
 
 from PyQt5 import QtCore, QtGui, QtWidgets
 from clock import *
+from hardware_interface *
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -18,6 +19,7 @@ class Ui_MainWindow(object):
         font = QtGui.QFont()
         font.setPointSize(16)
         MainWindow.setFont(font)
+        self.brew = 0
 
         # setting background image to status bar 
         #MainWindow.statusBar().setStyleSheet("background-image : url(beans.jpg);")
@@ -89,7 +91,10 @@ class Ui_MainWindow(object):
         pass
 
     def brew_callback(self):
-        pass
+        if self.brew == 0:
+            lll.setPinState(1)
+        elif self.brew == 1:
+            lll.setPinState(0)
 
     def clockTest_callback(self):
         txt = self.clk.getCurrentTime()
@@ -98,6 +103,7 @@ class Ui_MainWindow(object):
 
 if __name__ == "__main__":
     import sys
+    lll = hardware_interface.pin_class()
     app = QtWidgets.QApplication(sys.argv)
     MainWindow = QtWidgets.QMainWindow()
     ui = Ui_MainWindow()

@@ -6,51 +6,56 @@
 #
 # WARNING! All changes made in this file will be lost!
 
+SCREEN_HEIGHT = int(480)
+SCREEN_WIDTH = int(320)
 
 from PyQt5 import QtCore, QtGui, QtWidgets
-
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(565, 404)
+        MainWindow.resize(480, 320)
+        MainWindow.setMaximumSize(QtCore.QSize(480, 320))
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
-        
-        #Buttons 
+
+        #Buttons
         self.pushButton1 = QtWidgets.QPushButton(self.centralwidget)
-        self.pushButton1.setGeometry(QtCore.QRect(0, 10, 131, 131))
+        self.pushButton1.setGeometry(QtCore.QRect(0, 10, 111, 121))
         self.pushButton1.setObjectName("pushButton1")
         self.pushButton2 = QtWidgets.QPushButton(self.centralwidget)
-        self.pushButton2.setGeometry(QtCore.QRect(130, 10, 141, 131))
+        self.pushButton2.setGeometry(QtCore.QRect(110, 10, 121, 121))
         self.pushButton2.setObjectName("pushButton2")
         self.pushButton3 = QtWidgets.QPushButton(self.centralwidget)
-        self.pushButton3.setGeometry(QtCore.QRect(270, 10, 151, 131))
+        self.pushButton3.setGeometry(QtCore.QRect(230, 10, 121, 121))
         self.pushButton3.setObjectName("pushButton3")
         self.pushButton4 = QtWidgets.QPushButton(self.centralwidget)
-        self.pushButton4.setGeometry(QtCore.QRect(420, 10, 141, 131))
+        self.pushButton4.setGeometry(QtCore.QRect(350, 10, 121, 121))
         self.pushButton4.setObjectName("pushButton4")
 
-        #TestEdit
+        #Textedits
         self.textEdit = QtWidgets.QTextEdit(self.centralwidget)
-        self.textEdit.setGeometry(QtCore.QRect(6, 230, 550, 131))
+        self.textEdit.setGeometry(QtCore.QRect(10, 180, 461, 101))
         self.textEdit.setReadOnly(True)
         self.textEdit.setObjectName("textEdit")
+
+        #Check Boxes
         self.checkBox1 = QtWidgets.QCheckBox(self.centralwidget)
-        self.checkBox1.setGeometry(QtCore.QRect(40, 160, 62, 17))
+        self.checkBox1.setGeometry(QtCore.QRect(30, 150, 62, 17))
         self.checkBox1.setObjectName("checkBox1")
         self.checkBox2 = QtWidgets.QCheckBox(self.centralwidget)
-        self.checkBox2.setGeometry(QtCore.QRect(170, 160, 62, 17))
+        self.checkBox2.setGeometry(QtCore.QRect(150, 150, 62, 17))
         self.checkBox2.setObjectName("checkBox2")
         self.checkBox3 = QtWidgets.QCheckBox(self.centralwidget)
-        self.checkBox3.setGeometry(QtCore.QRect(320, 160, 62, 17))
+        self.checkBox3.setGeometry(QtCore.QRect(270, 150, 62, 17))
         self.checkBox3.setObjectName("checkBox3")
         self.checkBox4 = QtWidgets.QCheckBox(self.centralwidget)
-        self.checkBox4.setGeometry(QtCore.QRect(450, 160, 62, 17))
+        self.checkBox4.setGeometry(QtCore.QRect(380, 150, 62, 17))
         self.checkBox4.setObjectName("checkBox4")
+
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(MainWindow)
-        self.menubar.setGeometry(QtCore.QRect(0, 0, 565, 21))
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 480, 21))
         self.menubar.setObjectName("menubar")
         MainWindow.setMenuBar(self.menubar)
         self.statusbar = QtWidgets.QStatusBar(MainWindow)
