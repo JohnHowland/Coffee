@@ -5,12 +5,14 @@ import gpiozero
 
 ON = 1
 OFF = 0
+sim_mode = False
 
 class pin_class(object):
 	def __init__(self, LED_number):
 		self.led_state = OFF
 		if os.name == 'nt':
 			print("On a windows system")
+			sim_mode = True
 		else:
 			self.led = gpiozero.LED(int(LED_number))
 			print("Not on a windows system")
@@ -21,10 +23,12 @@ class pin_class(object):
 	def setPinState(state):
 		if state == ON:
 			self.led_state = ON
-			self.led.on()
+			if sim_mode is False:
+				self.led.on()
 		elif state == OFF:
 			self.led_state = OFF
-			self.led.off()
+			if sim_mode is False:
+				self.led.off()
 		else:
 			print("How did you get there?!")
 

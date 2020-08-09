@@ -9,7 +9,7 @@
 
 from PyQt5 import QtCore, QtGui, QtWidgets
 from clock import *
-from hardware_interface *
+from hardware_interface import*
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -103,7 +103,7 @@ class Ui_MainWindow(object):
 
 if __name__ == "__main__":
     import sys
-    lll = hardware_interface.pin_class()
+    lll = pin_class(17)
     app = QtWidgets.QApplication(sys.argv)
     MainWindow = QtWidgets.QMainWindow()
     ui = Ui_MainWindow()
