@@ -93,8 +93,10 @@ class Ui_MainWindow(object):
     def brew_callback(self):
         if self.brew == 0:
             lll.setPinState(1)
+            self.brew = 1
         elif self.brew == 1:
             lll.setPinState(0)
+            self.brew = 0
 
     def clockTest_callback(self):
         txt = self.clk.getCurrentTime()
